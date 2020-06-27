@@ -49,6 +49,16 @@ exports.createTour = (req, res) => {
   });
 };
 
+exports.checkPostBody = (req, res, next) => {
+  if (!req.body.name || !req.body.price) {
+    return res.status(400).json({
+      status: 'failed',
+      message: 'name or price is required',
+    });
+  }
+  next();
+};
+
 exports.updateTour = (req, res) => {
   res.status(200).json({
     status: 'success',
