@@ -1,13 +1,11 @@
 const express = require('express');
+
 const router = express.Router();
-const controllers = require('./../controllers/tourControllers');
+const controllers = require('../controllers/tourControllers');
 
-router.param('id', controllers.checkID);
+// router.param('id', controllers.checkID);
 
-router
-  .route('/')
-  .get(controllers.getAllTours)
-  .post(controllers.checkPostBody, controllers.createTour);
+router.route('/').get(controllers.getAllTours).post(controllers.createTour);
 router
   .route('/:id')
   .get(controllers.getTour)
