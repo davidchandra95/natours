@@ -1,3 +1,3 @@
 # natours
 
-just trying to finish my course lol
+Platform for group hiking
